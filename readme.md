@@ -21,7 +21,7 @@
 
 ## Run App
 ```t
-git clone https://github.com/sele14/
+git clone https://github.com/sele14/flask-restapi
 
 # Build docker image
 docker build -t rest-api
