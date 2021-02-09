@@ -1,5 +1,8 @@
-from flask_restful import Resource, abort
+from flask_restful import Resource, abort, reqparse
 import logging as logger
+
+parser = reqparse.RequestParser()
+parser.add_argument('instrument')
 
 
 INSTRUMENTS = {
