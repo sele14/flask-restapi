@@ -15,6 +15,16 @@
 ## HTTP Requests:
 - Requests are made via HTTP
 - GET: retreive info (view collection)
-  - Is an idempotent request; can make the same request multiple times wuthout changing anything in the database.
+  - Is an idempotent request; can make the same request multiple times without changing anything in the database.
 - POST: create a new resource; is not idempotent, because once we send information, we create a new item in the db.
 - DELETE: delete resources: is idempotent, we can send the same delete multiple times without side-effects.
+
+## Run App
+```t
+git clone https://github.com/sele14/
+
+# Build docker image
+docker build -t rest-api
+# Run
+docker run -p 8050:8050 rest-api
+```
