@@ -1,27 +1,29 @@
 from flask_restful import Resource, abort, reqparse
 import logging as logger
 
+logger.basicConfig(level=logger.DEBUG)
+
 parser = reqparse.RequestParser()
 parser.add_argument('instrument')
 
 
 INSTRUMENTS = {
-	"instrument1" : {
-		"ID" : "0",
+	'instrument0': {
+		"ID" : 0,
 		"Type" : "Stock",
 		"Name" : "ATVI",
 		"Price" : 92.68,
 		"Quantity" : 5
 	},
-	"instrument2" : {
-		"ID" : "1",
+	'instrument1': {
+		"ID" : 1,
 		"Type" : "Bond",
 		"Name" : "TNX",
 		"Price" : 11.39,
 		"Quantity" : 3
-	},
-	# 'instrument3' : {
-	# 	"ID" : "2",
+	}
+	# 'instrument2': {
+	# 	"ID" : 2,
 	# 	"Type" : "Cryptocurrency",
 	# 	"Name" : "BTC",
 	# 	"Price" : 27303.96,
@@ -34,7 +36,7 @@ def check_if_exists(instrument_id):
     Checks if the instrument exists
     """
     if instrument_id not in INSTRUMENTS:
-        abort(404, message=f"Instrument {instrument_id} doesn't exist")
+        abort(404, message=f"Instrument {instrument_id} doesn't exist.")
 
 
 # shows a single instrument and lets you delete an instrument
