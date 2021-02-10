@@ -45,14 +45,17 @@ Delete an instrument:
 ```curl http://localhost:5000/instruments/instrument2 -X DELETE -v```
 
 
-Add a new instrument:
+Create a new instrument:
+
+- Send a ```POST``` request and pass the body as:
 
 ```json
-body = {
+body = {"instrument": {
  	"ID" : 2,
  	"Type" : "Cryptocurrency",
  	"Name" : "BTC",
  	"Price" : 27303.96,
  	"Quantity" : 1
+  }
 }
 ```
