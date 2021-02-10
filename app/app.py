@@ -8,7 +8,7 @@ api = Api(app)
 
 # Adding the API resource routing
 api.add_resource(InstrumentList, '/instruments')
-api.add_resource(Instrument, '/instruments/<instrument_id>')
+api.add_resource(Instrument, '/instruments/<string:instrument_id>')
 
 if __name__ == '__main__':
     app.run(debug=True)
